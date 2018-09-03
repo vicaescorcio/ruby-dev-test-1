@@ -1,0 +1,11 @@
+<%= form_for @asset, :html => {:multipart => true} do |f| %> 
+   <% @asset.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+   <% end %> 
+    <p> 
+        <%= f.label :uploaded_file, "File" %><br /> 
+        <%= f.file_field :uploaded_file %>
+        <%= f.hidden_field :folder_id %>  
+      </p> 
+  <p><%= f.submit "Upload" %></p> 
+<% end %>

@@ -1,0 +1,44 @@
+<%= render :partial => "partials/breadcrumbs" %>
+
+<ul id= "top_menu">     
+      <% if @current_folder %> 
+       <li><%= link_to "Upload", new_sub_file_path(@current_folder) %></li> 
+       <li><%= link_to "New Folder", new_sub_folder_path(@current_folder) %></li> 
+   <% else %> 
+       <li><%= link_to "Upload", new_asset_path %></li> 
+       <li><%= link_to "New Folder", new_folder_path %></li> 
+   <% end %> 
+</ul>
+<div class="asset_list"> 
+    <!-- Listing Folders -->
+    <% @folders.each do |folder| %> 
+        <div class="asset_details folder"> 
+            <div class="file_name"><%= link_to folder.name, browse_path(folder) %></div> 
+            <div class="file_size"> - </div> 
+            <div class="file_last_updated"> - </div> 
+                    <div class="actions"> 
+            <div class="rename"> 
+                <%= link_to "Rename",rename_folder_path(folder) %> 
+            </div> 
+            <div class="delete"> 
+                <%= link_to "Delete", folder, :confirm => 'Are you sure to delete the folder and all of its contents?', :method => :delete %>
+            </div> 
+        </div> 
+        </div> 
+    <% end %> 
+  
+    <!-- Listing Files -->
+      <% @assets.each do |asset| %> 
+          <div class="asset_details file"> 
+              <div class="file_name"><%= link_to asset.file_name, download_url(asset) %></div> 
+              <div class="actions"> 
+                 <div class="download"> 
+                   <%= link_to "Download", download_url(asset) %> 
+                 </div> 
+                 <div class="delete"> 
+                  <%= link_to "Delete", asset, :confirm => 'Are you sure?', :method => :delete %>
+                 </div> 
+              </div> 
+          </div> 
+      <% end %> 
+</div>
