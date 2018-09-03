@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FileSystem</title>
-    <%= csrf_meta_tags %>
+
+<head>
+  <title>FileSystem</title>
+  <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-
+<body>
+  <div class="navbar-fixed">
+    <nav class="blue">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo center"> <i class="material-icons">unarchive</i>
+          Files</a>
+        <ul class="right hide-on-med-and-down">
+      
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
     <%= yield %>
-  </body>
+  </div>
+</body>
+
 </html>

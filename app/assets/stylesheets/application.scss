@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "materialize";
+ @import "material_icons";
+ @import url('https://fonts.googleapis.com/css?family=Oswald');
  .breadcrumbs { 
     margin:10px 0; 
     font-weight:bold; 
@@ -21,3 +25,13 @@
     color:#1D96EF; 
     text-decoration:none; 
  }
+
+ .asset_details .file_name{
+     float:left;
+     margin: 10px;
+     font-size: 20px;
+ }
+
+body{
+    font-family: 'Oswald', sans-serif;
+}
